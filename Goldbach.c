@@ -8,8 +8,9 @@ int expressable(int n);
 
 
 int main() {
-	int odd = 7, // project euler gives the first example of 9
-        expressed = 1;
+
+	int odd = 7; // project euler gives the first example of 9
+    short unsigned int expressed = 1;
 
 	while (expressed) {
         odd += 2;
@@ -29,10 +30,13 @@ int main() {
 
 int isPrime(int n) {
 	int i = 0,
-		root = sqrt(n);
+		root = sqrt(n) + 1;
 
-	// loop upto sqrt as factors come in pairs
-	for (i = 2; i <= root; i++) {
+	if (n <= 1) {
+		return 0;
+	}
+
+	for (i = 2; i < root; i++) {
 		if (n % i == 0) {
 			return 0;
 		}
@@ -50,11 +54,10 @@ int expressable(int n) {
                 if (isPrime(i)) {
 
 					// difference represents the 2*square part of the expresion => divide by 2
-                    difference = n - isPrime(i);
-                    difference /= 2;
+                    difference = ( n - isPrime(i) ) / 2;
 
                     // if the difference is a square
-                    if (sqrt(difference) == floor(sqrt(difference))) {
+                    if ( sqrt(difference) == floor(sqrt(difference)) ) {
                         return 1; // n is expressable in Goldbach form
                     }
                 }
