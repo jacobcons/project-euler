@@ -45,4 +45,4 @@ int expressable(int n) {
 			}
 
 		return 0; // n isn't expressable in Goldbach form
-	}
+}
