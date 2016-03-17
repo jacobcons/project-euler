@@ -1,22 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include "prime.h"
 
-int isPrime(int n);
 int expressable(int n);
-
-
 
 int main() {
 
 	int odd = 7; // project euler gives the first example of 9
     short unsigned int expressed = 1;
 
-	while (expressed) {
+	while ( expressed ) {
         odd += 2;
 
 		// if the odd is composite
-        if (!isPrime(odd)) {
+        if ( !isPrime(odd) ) {
             expressed = expressable(odd); //if not expressable returns 0
         }
 
@@ -28,30 +26,13 @@ int main() {
 	return 0;
 }
 
-int isPrime(int n) {
-	int i = 0,
-		root = sqrt(n) + 1;
-
-	if (n <= 1) {
-		return 0;
-	}
-
-	for (i = 2; i < root; i++) {
-		if (n % i == 0) {
-			return 0;
-		}
-	}
-
-	return n;
-}
-
 int expressable(int n) {
 	int i = 0,
 		minSum = n - 2, // n = p + 2*square => i loops up to n-2 as the smallest square number is 1
 		difference = 0;
 
 		for (i = 2; i <= minSum; i++) {
-                if (isPrime(i)) {
+                if ( isPrime(i) ) {
 
 					// difference represents the 2*square part of the expresion => divide by 2
                     difference = ( n - isPrime(i) ) / 2;
