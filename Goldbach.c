@@ -18,6 +18,7 @@ int main() {
         if (!isPrime(odd)) {
             expressed = expressable(odd); //if not expressable returns 0
         }
+
 	} // terminates if not expressable
 
 
