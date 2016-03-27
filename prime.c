@@ -14,5 +14,5 @@ int isPrime(int n) {
 		}
 	}
 
-	return n;
+	return 1;
 }

@@ -35,7 +35,7 @@ int expressable(int n) {
                 if ( isPrime(i) ) {
 
 					// difference represents the 2*square part of the expresion => divide by 2
-                    difference = ( n - isPrime(i) ) / 2;
+                    difference = (n - i) / 2;
 
                     // if the difference is a square
                     if ( sqrt(difference) == floor(sqrt(difference)) ) {

@@ -16,7 +16,7 @@ int main() {
 			int minSum = odd - 2;
 			for (i = 2; i <= minSum; i++) {
 					if ( isPrime(i) ) {
-						int difference = ( odd - isPrime(i) ) / 2;
+						int difference = (odd - i) / 2;
 						if ( sqrt(difference) == (int)sqrt(difference) ) {
 							expressable = 1;
 						}
