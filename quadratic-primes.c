@@ -3,6 +3,7 @@
 #include <math.h>
 #include "prime.h"
 
+// project-euler-problem-27
 int main() {
 	int a = 0,
 		b = 0,

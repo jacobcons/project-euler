@@ -3,6 +3,7 @@
 #include <math.h>
 #include "prime.h"
 
+// project-euler-problem-46
 int main() {
 	int odd = 7,
 		i = 0;
